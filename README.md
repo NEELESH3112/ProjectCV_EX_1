@@ -54,15 +54,15 @@ It will create a `results/` folder and save all output figures plus a JSON summa
 The method is directly based on the exercise description:
 
 1. Load one of the example files and visualize amplitude image, distance image, and 3D point cloud. fileciteturn1file0L10-L25
-2. Ignore invalid points whose z-value is `0`. fileciteturn1file0L41-L46
-3. Run self-written RANSAC on the 3D point cloud to detect the **floor plane**. fileciteturn1file0L26-L41
+2. Ignore invalid points whose z-value is `0`. 
+3. Run self-written RANSAC on the 3D point cloud to detect the **floor plane**. 
 4. Convert floor inliers into a mask image.
-5. Improve the mask using morphological filtering. The exercise explicitly asks to evaluate which operators work best. In this solution, **closing** is used first to fill small holes in the floor mask, then **opening** is used to remove small noise blobs. fileciteturn1file0L47-L54
-6. Remove the floor points and run RANSAC again on the remaining 3D points to get the **top plane of the box**. fileciteturn1file0L54-L60
-7. Use connected components and keep the **largest connected component**, because the sheet says it can be assumed to delimit the box top. fileciteturn1file0L61-L67
+5. Improve the mask using morphological filtering. The exercise explicitly asks to evaluate which operators work best. In this solution, **closing** is used first to fill small holes in the floor mask, then **opening** is used to remove small noise blobs. 
+6. Remove the floor points and run RANSAC again on the remaining 3D points to get the **top plane of the box**. 
+7. Use connected components and keep the **largest connected component**, because the sheet says it can be assumed to delimit the box top. 
 8. Estimate the **height** using the distance between top-plane points and the floor plane, with plane offset as a cross-check.
 9. Estimate **length** and **width** from a PCA-aligned oriented bounding box on the top plane.
-10. Visualize masks, planes, and corners. The exercise asks for a simple visualization of the results. fileciteturn1file0L68-L74
+10. Visualize masks, planes, and corners. The exercise asks for a simple visualization of the results. 
 
 ## Important implementation choices
 
