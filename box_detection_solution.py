@@ -1,8 +1,6 @@
-#!/usr/bin/env python3
 """
-Computer Vision Project, Summer 2026 - solution for Exercise 1.1 / 1.2 (Box Detection)
-
-What this script does:
+Exercise 1.1 / 1.2 (Box Detection)
+We have written down what this script does in order to convey an idea.
 1. Loads all provided Kinect .mat examples
 2. Visualizes amplitude image, distance image, and a subsampled point cloud
 3. Implements plane fitting with a self-written RANSAC
