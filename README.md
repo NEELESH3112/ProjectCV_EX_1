@@ -53,7 +53,7 @@ It will create a `results/` folder and save all output figures plus a JSON summa
 
 The method is directly based on the exercise description:
 
-1. Load one of the example files and visualize amplitude image, distance image, and 3D point cloud. fileciteturn1file0L10-L25
+1. Load one of the example files and visualize amplitude image, distance image, and 3D point cloud. 
 2. Ignore invalid points whose z-value is `0`. 
 3. Run self-written RANSAC on the 3D point cloud to detect the **floor plane**. 
 4. Convert floor inliers into a mask image.
