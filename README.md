@@ -316,7 +316,6 @@ python3 box_detection_solution.py
 The terminal output was:
 
 ```text
-Finished.
 Example 1: L=0.649 m, W=0.470 m, H=0.189 m (plane distance cross-check: 0.193 m)
 Example 2: L=0.472 m, W=0.402 m, H=0.189 m (plane distance cross-check: 0.192 m)
 Example 3: L=0.474 m, W=0.399 m, H=0.192 m (plane distance cross-check: 0.190 m)
