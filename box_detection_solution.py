@@ -406,7 +406,7 @@ def solve_example(example_idx: int, input_dir: str, out_dir: str):
 
 
 def main():
-    input_dir = "."
+    input_dir = "data"
     out_dir = "results"
     os.makedirs(out_dir, exist_ok=True)
 
