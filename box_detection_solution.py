@@ -234,7 +234,19 @@ def save_detection_visualization(example_idx, D, floor_mask, floor_mask_filtered
     axes[2].set_title("floor mask (filtered)")
     axes[3].imshow(top_mask_raw, cmap="gray")
     axes[3].set_title("top plane mask")
-    axes[4].imshow(top_mask_box, cmap="gray")
+    vis = np.zeros((top_mask_box.shape[0], top_mask_box.shape[1], 3))
+
+    # Blue background
+    vis[:, :] = [0.0, 0.4, 1.0]
+
+    # Green floor
+    vis[floor_mask_filtered] = [0.6, 0.9, 0.4]
+
+    # Red box top
+    vis[top_mask_box] = [0.8, 0.0, 0.0]
+
+    axes[4].imshow(vis)
+    axes[4].set_title("final detection (colored)")
     axes[4].set_title("largest CC = box top")
 
     for ax in axes:
@@ -291,7 +303,8 @@ def save_presentation_visualization(example_idx, PC, floor_mask_filtered, top_ma
     """
     H, W, _ = PC.shape
 
-    img = np.ones((H, W, 3), dtype=np.float32)
+    img = np.zeros((H, W, 3), dtype=np.float32)
+    img[:, :] = np.array([0.00, 0.40, 1.00], dtype=np.float32)  # blue
     floor_color = np.array([0.60, 0.93, 0.45], dtype=np.float32)   # green
     top_color = np.array([0.70, 0.00, 0.00], dtype=np.float32)     # red
     edge_color = np.array([0.00, 0.95, 1.00], dtype=np.float32)    # cyan
